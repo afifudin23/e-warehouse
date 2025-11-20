@@ -46,35 +46,35 @@ class Index extends Component
     public function edit(string $id): void
     {
         $this->reset(["name"]);
-        $user = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
 
         $this->id = $id;
-        $this->name = $user->name;
+        $this->name = $category->name;
     }
 
     public function update(string $id): void
     {
-        $user = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
         $this->validate(["name" => "required|string"]);
 
         $data = ["name" => $this->name];
-        $user->update($data);
+        $category->update($data);
 
         $this->dispatch("edit-category-success");
     }
 
     public function delete(string $id): void
     {
-        $user = Category::findOrFail($id);
+        $category = Category::findOrFail($id);
 
         $this->id = $id;
-        $this->name = $user->name;
+        $this->name = $category->name;
     }
 
     public function destroy(string $id): void
     {
-        $user = Category::findOrFail($id);
-        $user->delete();
+        $category = Category::findOrFail($id);
+        $category->delete();
 
         $this->dispatch("delete-category-success");
     }

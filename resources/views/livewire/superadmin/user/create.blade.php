@@ -17,7 +17,7 @@
                 <div class="modal-body">
 
                     <div class="form-group mb-3">
-                        <label>Name <span class="text-danger">*</span></label>
+                        <label>Name<span class="text-danger">*</span></label>
                         <input wire:model="name" type="text"
                                class="form-control @error('name') is-invalid @enderror"
                                placeholder="John Doe">
@@ -25,10 +25,10 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Role <span class="text-danger">*</span></label>
+                        <label>Role<span class="text-danger">*</span></label>
                         <select wire:model="role"
                                 class="form-control @error('role') is-invalid @enderror">
-                            <option value="" disabled selected>Select Role</option>
+                            <option value="" selected>Select Role</option>
                             <option value="superadmin">Superadmin</option>
                             <option value="admin">Admin</option>
                         </select>
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Email <span class="text-danger">*</span></label>
+                        <label>Email<span class="text-danger">*</span></label>
                         <input wire:model="email" type="email"
                                class="form-control @error('email') is-invalid @enderror"
                                placeholder="example@mail.com">
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Password <span class="text-danger">*</span></label>
+                        <label>Password<span class="text-danger">*</span></label>
                         <input wire:model="password" type="password"
                                class="form-control @error('password') is-invalid @enderror"
                                placeholder="●●●●●●●●●">
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-group mb-1">
-                        <label>Password Confirmation <span class="text-danger">*</span></label>
+                        <label>Password Confirmation<span class="text-danger">*</span></label>
                         <input wire:model="password_confirmation" type="password"
                                class="form-control @error('password_confirmation') is-invalid @enderror"
                                placeholder="●●●●●●●●●">

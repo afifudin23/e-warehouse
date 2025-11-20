@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-5">
                         <input wire:model.live="search" type="text" class="form-control"
-                               placeholder="Search by name category...">
+                               placeholder="Search by category name...">
                     </div>
                 </div>
 

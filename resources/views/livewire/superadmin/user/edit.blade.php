@@ -17,7 +17,7 @@
                 <div class="modal-body">
 
                     <div class="form-group mb-3">
-                        <label>Name <span class="text-danger">*</span></label>
+                        <label>Name<span class="text-danger">*</span></label>
                         <input wire:model="name" type="text"
                                class="form-control @error('name') is-invalid @enderror"
                                placeholder="John Doe">
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Role <span class="text-danger">*</span></label>
+                        <label>Role<span class="text-danger">*</span></label>
                         <select wire:model="role"
                                 class="form-control @error('role') is-invalid @enderror">
                             <option value="" disabled>Select Role</option>
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Email <span class="text-danger">*</span></label>
+                        <label>Email<span class="text-danger">*</span></label>
                         <input wire:model="email" type="email"
                                class="form-control @error('email') is-invalid @enderror"
                                placeholder="example@mail.com">
