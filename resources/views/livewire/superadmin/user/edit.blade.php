@@ -1,13 +1,13 @@
 <!-- Modal -->
-<div wire:ignore.self class="modal fade" id="create-user" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div wire:ignore.self class="modal fade" id="edit-user" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
-            <form wire:submit.prevent="store">
+            <form wire:submit.prevent="update('{{ $id }}')">
 
-                <div class="modal-header bg-primary text-white">
+                <div class="modal-header bg-warning text-white">
                     <h5 class="modal-title">
-                        <i class="mr-1 bi bi-plus-circle"></i> Add {{ $title }}
+                        <i class="mr-1 bi bi-pencil-square"></i> Edit {{ $title }}
                     </h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -28,7 +28,7 @@
                         <label>Role <span class="text-danger">*</span></label>
                         <select wire:model="role"
                                 class="form-control @error('role') is-invalid @enderror">
-                            <option value="" disabled selected>Select Role</option>
+                            <option value="" disabled>Select Role</option>
                             <option value="superadmin">Superadmin</option>
                             <option value="admin">Admin</option>
                         </select>
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Password <span class="text-danger">*</span></label>
+                        <label>Password</label>
                         <input wire:model="password" type="password"
                                class="form-control @error('password') is-invalid @enderror"
                                placeholder="●●●●●●●●●">
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="form-group mb-1">
-                        <label>Password Confirmation <span class="text-danger">*</span></label>
+                        <label>Password Confirmation</label>
                         <input wire:model="password_confirmation" type="password"
                                class="form-control @error('password_confirmation') is-invalid @enderror"
                                placeholder="●●●●●●●●●">
@@ -62,8 +62,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary px-4">
-                        <i class="fas fa-check-circle mr-1"></i> Submit
+                    <button type="submit" class="btn btn-warning text-white px-4">
+                        <i class="mr-1 bi bi-pencil-square"></i> Update
                     </button>
                 </div>
 
