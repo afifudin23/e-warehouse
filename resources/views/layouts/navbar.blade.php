@@ -29,10 +29,13 @@
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                    <a href="#" class="btn btn-sm btn-danger float-right">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Sign out
-                    </a>
+                    <form action="{{ route('auth.logout') }}" method="POST">
+                        @csrf
+                        <button class="btn btn-sm btn-danger float-right">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign out
+                        </button>
+                    </form>
                 </li>
             </ul>
         </li>

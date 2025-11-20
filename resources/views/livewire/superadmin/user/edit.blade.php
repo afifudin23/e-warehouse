@@ -37,7 +37,7 @@
 
                     <div class="form-group mb-3">
                         <label>Email<span class="text-danger">*</span></label>
-                        <input wire:model="email" type="email"
+                        <input wire:model="email" type="text"
                                class="form-control @error('email') is-invalid @enderror"
                                placeholder="example@mail.com">
                         @error('email') <small class="text-danger">{{ $message }}</small> @enderror

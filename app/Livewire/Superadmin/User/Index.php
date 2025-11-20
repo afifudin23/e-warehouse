@@ -73,7 +73,8 @@ class Index extends Component
         $this->validate([
             "name" => "required|string",
             "role" => "required|string",
-            "email" => "required|email|unique:users,email," . $id,
+//            "email" => "required|email|unique:users,email," . $id,
+            "email" => "required|string",
             "password" => "nullable|string|confirmed",
             "password_confirmation" => "nullable|string|same:password",
         ]);
