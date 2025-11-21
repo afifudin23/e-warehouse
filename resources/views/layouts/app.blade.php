@@ -7,6 +7,7 @@
 
     @include("layouts.style")
     @livewireStyles
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->

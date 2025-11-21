@@ -24,7 +24,10 @@ class Index extends Component
             "users" => User::where(function ($query) {
                 $query->whereRaw("LOWER(name) LIKE ?", ['%' . strtolower($this->search) . '%'])
                     ->orWhereRaw("LOWER(email) LIKE ?", ['%' . strtolower($this->search) . '%']);
-            })->orderBy('role', 'DESC')->paginate($this->paginate)
+            })
+                ->orderBy('role', 'DESC')
+                ->orderBy('name', 'ASC')
+                ->paginate($this->paginate)
 
         );
         return view('livewire.superadmin.user.index', $data);
@@ -73,8 +76,7 @@ class Index extends Component
         $this->validate([
             "name" => "required|string",
             "role" => "required|string",
-//            "email" => "required|email|unique:users,email," . $id,
-            "email" => "required|string",
+            "email" => "required|email|unique:users,email," . $id,
             "password" => "nullable|string|confirmed",
             "password_confirmation" => "nullable|string|same:password",
         ]);

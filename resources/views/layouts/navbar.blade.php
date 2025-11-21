@@ -1,3 +1,8 @@
+<?php
+$name = auth()->user()->name;
+$role = auth()->user()->role;
+?>
+
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -14,7 +19,7 @@
                 <img src="{{asset('adminlte3/dist/img/user2-160x160.jpg')}}"
                      class="user-image img-circle"
                      alt="User Image">
-                <span class="d-none d-md-inline">Andev</span>
+                <span class="d-none d-md-inline">{{ $name }}</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- User image -->
@@ -23,8 +28,8 @@
                          alt="User Image">
 
                     <div>
-                        <p>Andev</p>
-                        <p class="d-inline badge badge-success">SUPERADMIN</p>
+                        <p>{{ $name }}</p>
+                        <p class="d-inline badge {{$role === "superadmin" ? "badge-info": "badge-primary"}} text-capitalize">{{ $role }}</p>
                     </div>
                 </li>
                 <!-- Menu Footer-->

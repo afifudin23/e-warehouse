@@ -38,7 +38,7 @@ class Login extends Component
             return;
         }
         auth()->login($user);
-        return redirect()->to("/superadmin/users");
+        return redirect()->to("/dashboard");
     }
 
     public function logout(): RedirectResponse
