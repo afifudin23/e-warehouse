@@ -2,11 +2,13 @@
 
 namespace App\Livewire\Superadmin\User;
 
+use App\Exports\UserExport;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Excel;
 
 class Index extends Component
 {
@@ -110,5 +112,15 @@ class Index extends Component
         $user->delete();
 
         $this->dispatch("delete-user-success");
+    }
+
+    public function exportExcel()
+    {
+        return (new UserExport())->download('user.xlsx');
+    }
+
+    public function exportPDF()
+    {
+        return (new UserExport())->download('user.pdf', Excel::DOMPDF);
     }
 }

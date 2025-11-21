@@ -49,11 +49,11 @@
                             Export
                         </button>
                         <div class="dropdown-menu">
-                            <button class="dropdown-item text-success" type="button">
+                            <button wire:click="exportExcel" class="dropdown-item text-success" type="button">
                                 <i class="mr-1 fas fa-file-excel"></i>
                                 to Excel
                             </button>
-                            <button class="dropdown-item text-danger" type="button">
+                            <button wire:click="exportPDF" class="dropdown-item text-danger" type="button">
                                 <i class="mr-1 bi bi-filetype-pdf"></i>
                                 to PDF
                             </button>

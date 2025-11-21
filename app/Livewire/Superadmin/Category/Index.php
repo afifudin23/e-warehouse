@@ -2,10 +2,12 @@
 
 namespace App\Livewire\Superadmin\Category;
 
+use App\Exports\CategoryExport;
 use App\Models\Category;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Excel;
 
 class Index extends Component
 {
@@ -77,5 +79,15 @@ class Index extends Component
         $category->delete();
 
         $this->dispatch("delete-category-success");
+    }
+
+    public function exportExcel()
+    {
+        return (new CategoryExport())->download('category.xlsx');
+    }
+
+    public function exportPDF()
+    {
+        return (new CategoryExport())->download('category.pdf', Excel::DOMPDF);
     }
 }

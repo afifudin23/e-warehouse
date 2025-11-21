@@ -2,12 +2,14 @@
 
 namespace App\Livewire\Admin\Product;
 
+use App\Exports\ProductExport;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Excel;
 
 class Index extends Component
 {
@@ -105,5 +107,15 @@ class Index extends Component
         $product->delete();
 
         $this->dispatch("delete-product-success");
+    }
+
+    public function exportExcel()
+    {
+        return (new ProductExport())->download('product.xlsx');
+    }
+
+    public function exportPDF()
+    {
+        return (new ProductExport())->download('product.pdf', Excel::DOMPDF);
     }
 }
